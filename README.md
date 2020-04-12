@@ -48,21 +48,41 @@ here is two example extra folders that bigger projects may have:
 Your app is probably not going to have a hundred themes, if it does, create reusable themes.
 
 ##### plugins
+It is not recommended to write platform plugin in your project. 
+
 If you have to write your own plugin, for testing purposes, write it in the `plugins` folder
-then create a new flutter plugin project and migrate 
+then create a new flutter plugin project and migrate your code to there. if possible open source or
+ publish that plugin to [pub.dev](pub.dev).  
 
 # State management
 
 ### Services
+Service do not have modified constructors.
+They cannot depend on BuildContext.
+
+TODO: more explanation
 
 # Naming
 
 ### File names
 
+##### Format
+type_name.dart
+
+type_parent_name.dart
+
 ### Class names
+Use camel case
+##### Example
+CalendarEventAdapter
 
 ### Variable names
-
+##### variable
+###### Example
+monthEvents
+##### constant or final 
+###### Example
+day_in_month
 ### Widget names
 
 # Application core
