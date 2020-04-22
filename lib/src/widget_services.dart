@@ -20,7 +20,7 @@ class Services extends StatefulWidget {
   }
 
 
-  static AppService get<T extends AppService>(BuildContext context,{bool bind}){
+  static T get<T extends AppService>(BuildContext context,{bool bind}){
     return ScopedModel.of<T>(context, rebuildOnChange: bind);
   }
 }
