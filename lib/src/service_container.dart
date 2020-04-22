@@ -1,14 +1,14 @@
-import 'package:fanoos_project/src/service.dart';
+import 'package:fanoos_project/src/app_service.dart';
 
 class ServiceContainer {
-  final Map<Type, Service> _services;
-  List<Service> get services => _services.values.toList(growable: false);
+  final Map<Type, AppService> _services;
+  List<AppService> get services => _services.values.toList(growable: false);
 
-  ServiceContainer(Map<Type, Service> services)
+  ServiceContainer(Map<Type, AppService> services)
       : assert(services != null),
         _services = services;
 
-  T get<T extends Service>() {
+  T get<T extends AppService>() {
     final service = _services[T];
     if (service == null) {
       throw "service of type $T is not registered in this service container";
@@ -17,7 +17,7 @@ class ServiceContainer {
   }
 
   Future<void> initAll() {
-    return Future.forEach<Service>(
+    return Future.forEach<AppService>(
       _services.values,
           (service) => service.init(),
     );

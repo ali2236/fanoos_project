@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:fanoos_project/src/service.dart';
+import 'package:fanoos_project/src/app_service.dart';
 import 'package:fanoos_project/src/service_container.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -20,7 +20,7 @@ class Services extends StatefulWidget {
   }
 
 
-  static Service get<T extends Service>(BuildContext context,{bool bind}){
+  static AppService get<T extends AppService>(BuildContext context,{bool bind}){
     return ScopedModel.of<T>(context, rebuildOnChange: bind);
   }
 }
