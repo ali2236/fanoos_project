@@ -1,3 +1,9 @@
+## [0.0.4]
+
+* changed `init` to `run`
+* changed `AppPage` to `AppRoute`
+* added `isSupported` getter to `AppService`
+
 ## [0.0.3]
 
 * changed `ServiceContainer` to be more like App services in fanoos_lib
