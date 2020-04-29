@@ -2,15 +2,16 @@ import 'package:fanoos_project/src/app_service.dart';
 
 class ServiceContainer {
   Map<Type, AppService> _services;
-  final Set<AppService> services;
 
-  ServiceContainer(this.services) {
+  ServiceContainer(Set<AppService> services) {
     _services = Map.fromIterable(
       services,
       key: (service) => service.runtimeType,
       value: (service) => service,
     );
   }
+
+  Iterable<AppService> get services => _services.values;
 
   T get<T extends AppService>() {
     final service = _services[T];
@@ -20,10 +21,14 @@ class ServiceContainer {
     return service;
   }
 
-  Future<void> initAll() {
+  Future<void> runAll() {
     return Future.forEach<AppService>(
       _services.values,
-      (service) => service.init(this),
+      (service) async {
+        if (service.isSupported) {
+          await service.run(this);
+        }
+      },
     );
   }
 }

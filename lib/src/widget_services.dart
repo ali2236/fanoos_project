@@ -19,7 +19,6 @@ class Services extends StatefulWidget {
     return context.findAncestorStateOfType<_ServicesState>().widget.container;
   }
 
-
   static T get<T extends AppService>(BuildContext context,{bool bind}){
     return ScopedModel.of<T>(context, rebuildOnChange: bind);
   }

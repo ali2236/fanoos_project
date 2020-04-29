@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-abstract class AppPage {
-  String get id;
+abstract class AppRoute {
+  String get route;
   Widget get icon;
   String get title;
 }
