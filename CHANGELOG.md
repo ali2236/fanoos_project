@@ -1,3 +1,9 @@
+## [0.0.5]
+
+* removed `AppRoute`
+* added `run` to `Services`
+* services are now run in parallel in startup
+
 ## [0.0.4]
 
 * changed `init` to `run`

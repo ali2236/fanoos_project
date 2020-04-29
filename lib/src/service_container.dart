@@ -26,7 +26,7 @@ class ServiceContainer {
       _services.values,
       (service) async {
         if (service.isSupported) {
-          await service.run(this);
+          service.run(this);
         }
       },
     );
