@@ -18,6 +18,7 @@ class Services extends InheritedModel<ServiceContainer> {
   static Services of<S extends AppService>(BuildContext context){
     var services = InheritedModel.inheritFrom<Services>(context, aspect: S);
     //services._activeType = _ServiceType<S>();
+    return services;
   }
 
   static S get<S extends AppService>(BuildContext context) {
