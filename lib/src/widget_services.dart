@@ -3,7 +3,7 @@ import 'package:fanoos_project/src/service_container.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class Services extends InheritedModel<ServiceContainer> {
+class Services extends InheritedModel<AppService> {
 
   final ServiceContainer container;
   //_ServiceType _activeType;
@@ -38,7 +38,7 @@ class Services extends InheritedModel<ServiceContainer> {
   }
 
   @override
-  bool updateShouldNotifyDependent(InheritedModel<ServiceContainer> oldWidget, Set<ServiceContainer> dependencies) {
+  bool updateShouldNotifyDependent(InheritedModel<AppService> oldWidget, Set<AppService> dependencies) {
     return false;
   }
 }
