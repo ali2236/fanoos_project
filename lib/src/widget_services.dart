@@ -2,12 +2,9 @@ import 'package:fanoos_project/src/app_service.dart';
 import 'package:fanoos_project/src/service_container.dart';
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class Services extends InheritedModel {
+class Services extends InheritedWidget {
 
   final ServiceContainer container;
-  //_ServiceType _activeType;
-  //_Pointer _changedType;
 
   Services({
     @required this.container,
@@ -16,8 +13,7 @@ class Services extends InheritedModel {
         super(child: child);
 
   static Services of<S extends AppService>(BuildContext context){
-    var services = InheritedModel.inheritFrom<Services>(context, aspect: S);
-    //services._activeType = _ServiceType<S>();
+    var services = context.dependOnInheritedWidgetOfExactType<Services>();
     return services;
   }
 
@@ -36,24 +32,4 @@ class Services extends InheritedModel {
   bool updateShouldNotify(Services old) {
     return false;
   }
-
-  @override
-  bool updateShouldNotifyDependent(InheritedModel oldWidget, Set dependencies) {
-    return false;
-  }
 }
-/*
-class _ServiceType<T extends AppService>{
-  bool check(AppService other) => other is T;
-}
-
-class _Pointer<T extends AppService>{
-  final AppService service;
-  _Pointer(this.service);
-
-  bool check(AppService other) => other is T;
-  @override
-  bool operator ==(other) {
-    return service == other;
-  }
-}*/

@@ -1,3 +1,7 @@
+## [0.0.7]
+
+* now using `InheritedWidget`
+
 ## [0.0.6]
 
 * removed `scoped_model`, now using the original fanoos_lib implementation
