@@ -1,3 +1,7 @@
+## [0.0.6]
+
+* removed `scoped_model`, now using the original fanoos_lib implementation
+
 ## [0.0.5]
 
 * removed `AppRoute`

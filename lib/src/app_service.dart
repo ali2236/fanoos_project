@@ -1,7 +1,8 @@
-import 'package:fanoos_project/fanoos_project.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'dart:async';
 
-abstract class AppService extends Model {
+import 'package:fanoos_project/fanoos_project.dart';
+
+abstract class AppService {
 
   bool get isSupported => true;
   Future<void> run(ServiceContainer services);

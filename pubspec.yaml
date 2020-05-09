@@ -1,6 +1,6 @@
 name: fanoos_project
 description: A new Flutter package.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/ali2236/fanoos_project
 
 environment:
@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  scoped_model: ^1.0.1
 
 dev_dependencies:
   flutter_test:
