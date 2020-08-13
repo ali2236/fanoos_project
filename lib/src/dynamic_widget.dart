@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'dynamic_layout.dart';
 
+///
+/// Used like a [StatefulWidget]
+///
 abstract class DynamicWidget extends StatefulWidget {
 
   ///
@@ -23,18 +26,6 @@ abstract class DynamicWidget extends StatefulWidget {
   /// Optional tag object, if you need to add metadata to your [DynamicWidget]
   ///
   get tag;
-
-  @override
-  int get hashCode => id.hashCode;
-
-  @override
-  bool operator ==(other) {
-    if (other is DynamicWidget) {
-      return id == other.id;
-    } else {
-      return false;
-    }
-  }
 
   @override
   State<StatefulWidget> createState() {
