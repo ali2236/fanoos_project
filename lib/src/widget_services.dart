@@ -2,6 +2,14 @@ import 'package:fanoos_project/src/app_service.dart';
 import 'package:fanoos_project/src/service_container.dart';
 import 'package:flutter/material.dart';
 
+///
+/// This widget will give access to it's container using [BuildContext].
+///
+/// Example:
+/// ```dart
+/// final settings = Services.get<SettingsServices>();
+/// ```
+///
 class Services extends InheritedWidget {
 
   final ServiceContainer container;

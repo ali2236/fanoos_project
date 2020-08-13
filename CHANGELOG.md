@@ -1,3 +1,15 @@
+## [0.1.2]
+
+* added MIT licence
+
+## [0.1.1]
+
+* added `DynamicWidget`
+
+## [0.1.0]
+
+* finalized Services implementation
+
 ## [0.0.7]
 
 * now using `InheritedWidget`

@@ -1,8 +1,21 @@
 import 'package:fanoos_project/src/app_service.dart';
 
+///
+/// The object that will hold your [AppService]s.
+///
 class ServiceContainer {
   Map<Type, AppService> _services;
 
+  ///
+  /// Example:
+  /// ```dart
+  /// final container = ServiceContainer({
+  ///   SettingsService(),
+  ///   SchedulerService(),
+  ///   ShareService(),
+  /// });
+  /// ```
+  ///
   ServiceContainer(Set<AppService> services) {
     _services = Map.fromIterable(
       services,
@@ -11,8 +24,19 @@ class ServiceContainer {
     );
   }
 
+  ///
+  /// Returns all registered Services
+  ///
   Iterable<AppService> get services => _services.values;
 
+  ///
+  /// Returns the first [AppService] with type [T]
+  ///
+  /// Example:
+  /// ```dart
+  /// final settingsService = container.get<SettingsService>();
+  /// ```
+  ///
   T get<T extends AppService>() {
     final service = _services[T];
     if (service == null) {
@@ -21,12 +45,15 @@ class ServiceContainer {
     return service;
   }
 
-  Future<void> runAll() {
-    return Future.forEach<AppService>(
+  ///
+  /// Runs and waits for all [AppService.run()] calls to complete
+  ///
+  Future<void> runAll() async{
+    return await Future.forEach<AppService>(
       _services.values,
       (service) async {
         if (service.isSupported) {
-          service.run(this);
+          await service.run(this);
         }
       },
     );
