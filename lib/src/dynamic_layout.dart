@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'dynamic_widget.dart';
 
-
 ///
 /// The Interchangeable state for [DynamicWidget]
 ///
 abstract class DynamicLayout<T extends DynamicWidget> extends State<T> {
-
   ///
   /// the Identifier for this layout.
   /// this is used in searching for the selected layout.
@@ -19,12 +17,11 @@ abstract class DynamicLayout<T extends DynamicWidget> extends State<T> {
 
   @override
   bool operator ==(other) {
-    if(other==null) return false;
-    if(other is DynamicLayout){
+    if (other == null) return false;
+    if (other is DynamicLayout) {
       return id == other.id;
     } else {
       return false;
     }
   }
-
 }

@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 
 class LoggerService extends AppService {
   @override
-  Future<void> run(ServiceContainer services) async{
+  Future<void> run(ServiceContainer services) async {
     print('Logger service initiated!');
   }
 

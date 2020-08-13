@@ -48,7 +48,7 @@ class ServiceContainer {
   ///
   /// Runs and waits for all [AppService.run()] calls to complete
   ///
-  Future<void> runAll() async{
+  Future<void> runAll() async {
     return await Future.forEach<AppService>(
       _services.values,
       (service) async {

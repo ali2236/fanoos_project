@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fanoos_project/fanoos_project.dart';
+
 ///
 /// [fanoos_project]'s Singleton blocks
 ///
@@ -20,7 +21,6 @@ import 'package:fanoos_project/fanoos_project.dart';
 /// ```
 ///
 abstract class AppService {
-
   ///
   /// This can control if the [run] function is called.
   /// If your [AppService] doesn't support all environments,
@@ -34,7 +34,6 @@ abstract class AppService {
   /// ```
   ///
   bool get isSupported => true;
-
 
   Future<void> run(ServiceContainer services);
 }

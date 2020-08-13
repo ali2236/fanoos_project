@@ -1,6 +1,6 @@
 name: fanoos_project
 description: A package to make complicated flutter projects without spgetti code.
-version: 0.1.2
+version: 0.1.2+2
 homepage: https://github.com/ali2236/fanoos_project
 
 environment:

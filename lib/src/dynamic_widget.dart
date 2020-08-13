@@ -6,7 +6,6 @@ import 'dynamic_layout.dart';
 /// Used like a [StatefulWidget]
 ///
 abstract class DynamicWidget extends StatefulWidget {
-
   ///
   /// The Identifier for this Implementation of [DynamicWidget]
   ///
