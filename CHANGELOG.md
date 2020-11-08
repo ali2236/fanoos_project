@@ -1,3 +1,7 @@
+## [0.2.0]
+
+* `Services.run` will now check `isSupported` before running
+
 ## [0.1.2]
 
 * added MIT licence

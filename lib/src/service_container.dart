@@ -56,6 +56,8 @@ class ServiceContainer {
           await service.run(this);
         }
       },
-    );
+    ).catchError((error) {
+      print('$error');
+    });
   }
 }

@@ -31,8 +31,11 @@ class Services extends InheritedWidget {
     return _services.first;
   }
 
-  static Future<void> run<S extends AppService>(BuildContext context) {
-    return get<S>(context).run(of<S>(context).container);
+  static Future<void> run<S extends AppService>(BuildContext context) async {
+    AppService service = get<S>(context);
+    if (service.isSupported) {
+      await service.run(of<S>(context).container);
+    }
   }
 
   @override
