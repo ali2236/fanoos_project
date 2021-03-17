@@ -4,7 +4,7 @@ import 'package:fanoos_project/src/app_service.dart';
 /// The object that will hold your [AppService]s.
 ///
 class ServiceContainer {
-  Map<Type, AppService> _services;
+  late Map<Type, AppService> _services;
 
   ///
   /// Example:
@@ -41,8 +41,9 @@ class ServiceContainer {
     final service = _services[T];
     if (service == null) {
       throw "service of type $T is not registered in this service container";
+    } else {
+      return service as T;
     }
-    return service;
   }
 
   ///

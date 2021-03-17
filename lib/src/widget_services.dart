@@ -14,19 +14,19 @@ class Services extends InheritedWidget {
   final ServiceContainer container;
 
   Services({
-    @required this.container,
-    @required Widget child,
-  })  : assert(child != null),
+    required this.container,
+    required Widget child,
+  })  :
         super(child: child);
 
-  static Services of<S extends AppService>(BuildContext context) {
+  static Services? of<S extends AppService>(BuildContext context) {
     var services = context.dependOnInheritedWidgetOfExactType<Services>();
     return services;
   }
 
   static S get<S extends AppService>(BuildContext context) {
     var services = of<S>(context);
-    var _services = services.container.services.whereType<S>();
+    var _services = services!.container.services.whereType<S>();
     if (_services.isEmpty) throw 'no service of type $S found';
     return _services.first;
   }
@@ -34,7 +34,7 @@ class Services extends InheritedWidget {
   static Future<void> run<S extends AppService>(BuildContext context) async {
     AppService service = get<S>(context);
     if (service.isSupported) {
-      await service.run(of<S>(context).container);
+      await service.run(of<S>(context)!.container);
     }
   }
 

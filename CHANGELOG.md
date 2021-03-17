@@ -1,3 +1,7 @@
+## [1.0.0]
+
+* null-safety
+
 ## [0.2.0]
 
 * `Services.run` will now check `isSupported` before running
